@@ -1,0 +1,12 @@
+# Ignore .env file
+.env
+
+# Ignore Python bytecode files
+*.pyc
+__pycache__/
+data/
+
+# Ignore virtual environment directories
+.venv/
+.pytest_cache/
+.DS_Store
