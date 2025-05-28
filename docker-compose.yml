@@ -4,7 +4,7 @@ services:
     image: postgres:14
     restart: always
     env_file:
-      - .env
+      - .env.db
     environment:
       POSTGRES_USER: ${POSTGRES_USER}
       POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
@@ -20,7 +20,7 @@ services:
     ports:
       - "5050:80"
     env_file:
-      - .env
+      - .env.db
     environment:
       PGADMIN_DEFAULT_EMAIL: ${PGADMIN_DEFAULT_EMAIL}
       PGADMIN_DEFAULT_PASSWORD: ${PGADMIN_DEFAULT_PASSWORD}
@@ -36,6 +36,6 @@ services:
     volumes:
       - ./app:/app/app
     env_file:
-      - .env
+      - .env.feedback
     command: uvicorn app.main:app --host 0.0.0.0 --port 8000 --reload
 

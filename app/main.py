@@ -1,6 +1,7 @@
 # app/main.py
 
 import os
+from dotenv import load_dotenv
 import json
 import psycopg2
 from fastapi import FastAPI, Request, Depends, HTTPException, status
@@ -10,9 +11,9 @@ import secrets
 
 app = FastAPI()
 security = HTTPBasic()
-print("Starting FastAPI app...")
 
 
+load_dotenv(dotenv_path=".env.feedback")
 USERNAME = os.getenv("BASIC_AUTH_USERNAME")
 PASSWORD = os.getenv("BASIC_AUTH_PASSWORD")
 
